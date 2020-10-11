@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: discovery-service
+    
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: ${DISCOVERY_SERVER:http://localhost:8761/eureka/}
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
